@@ -1,0 +1,64 @@
+name: Update GoatCounter stats
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch GoatCounter data and build stats.json
+        env:
+          GC_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+          GC_SITE: "https://sergioportoo.goatcounter.com"
+        run: |
+          set -e
+          END=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          START=$(date -u -d "7 days ago" +%Y-%m-%dT%H:%M:%SZ)
+
+          call() {
+            curl -s -H "Content-Type: application/json" \
+                 -H "Authorization: Bearer $GC_TOKEN" \
+                 "$GC_SITE/api/v0/$1"
+          }
+
+          TOTAL=$(call "stats/total?start=$START&end=$END")
+          HITS=$(call "stats/hits?limit=8&start=$START&end=$END")
+          BROWSERS=$(call "stats/browsers?start=$START&end=$END")
+          SYSTEMS=$(call "stats/systems?start=$START&end=$END")
+          REFS=$(call "stats/toprefs?start=$START&end=$END")
+
+          jq -n \
+            --argjson total "$TOTAL" \
+            --argjson hits "$HITS" \
+            --argjson browsers "$BROWSERS" \
+            --argjson systems "$SYSTEMS" \
+            --argjson refs "$REFS" \
+            --arg updatedAt "$END" \
+            '{
+              updatedAt: $updatedAt,
+              total: $total,
+              hits: $hits,
+              browsers: $browsers,
+              systems: $systems,
+              referrers: $refs
+            }' > stats.json
+
+          echo "stats.json generated:"
+          cat stats.json
+
+      - name: Save stats.json to the repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats.json
+          git diff --quiet --cached || git commit -m "Update GoatCounter stats"
+          git push
