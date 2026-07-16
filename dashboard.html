@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Painel do site — @nutri.sergioporto</title>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+  body { margin: 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const NAVY = "#1F4E79";
+const NAVY_LIGHT = "#EAF1F8";
+const PULSE = "#2FA36B";
+const SLATE = "#5B6B7A";
+
+// Path to the file generated automatically by the GitHub Action.
+// Adjust if stats.json lives in a different folder on your site.
+const STATS_URL = "stats.json";
+
+function StatCard({ label, value, sub }) {
+  return (
+    <div style={{ background: "#fff", border: `1px solid ${NAVY_LIGHT}`, borderRadius: 10, padding: "16px 18px", flex: 1, minWidth: 140 }}>
+      <div style={{ color: SLATE, fontSize: 12, fontFamily: "Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5 }}>
+        {label}
+      </div>
+      <div style={{ fontSize: 28, fontWeight: 700, color: NAVY, fontFamily: "Arial, sans-serif", marginTop: 4 }}>{value}</div>
+      {sub && <div style={{ fontSize: 12, color: SLATE, fontFamily: "Arial, sans-serif", marginTop: 2 }}>{sub}</div>}
+    </div>
+  );
+}
+
+function HBar({ data, unit = "" }) {
+  if (!data || data.length === 0) {
+    return <div style={{ fontFamily: "Arial, sans-serif", fontSize: 13, color: SLATE }}>Sem dados no período.</div>;
+  }
+  const max = Math.max(...data.map((d) => d.value));
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {data.map((d) => (
+        <div key={d.name}>
+          <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "Arial, sans-serif", fontSize: 13, color: NAVY, marginBottom: 4 }}>
+            <span>{d.name}</span>
+            <span style={{ fontWeight: 700 }}>{d.value}{unit}</span>
+          </div>
+          <div style={{ background: NAVY_LIGHT, borderRadius: 6, height: 10, overflow: "hidden" }}>
+            <div style={{ width: `${max ? (d.value / max) * 100 : 0}%`, background: PULSE, height: "100%", borderRadius: 6 }} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PulseLine({ data }) {
+  const w = 320, h = 60;
+  const safeData = data && data.length > 0 ? data : [0];
+  const max = Math.max(...safeData, 1);
+  const step = safeData.length > 1 ? w / (safeData.length - 1) : w;
+  const points = safeData.map((v, i) => `${i * step},${h - (v / max) * (h - 10) - 5}`).join(" ");
+  return (
+    <svg width="100%" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none">
+      <polyline points={points} fill="none" stroke={PULSE} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      {safeData.map((v, i) => v > 0 && (
+        <circle key={i} cx={i * step} cy={h - (v / max) * (h - 10) - 5} r="3" fill={NAVY} />
+      ))}
+    </svg>
+  );
+}
+
+// Converts the raw GoatCounter API format (list of {name, count})
+// into the {name, value} format the components above expect.
+function toNameValue(list, limit = 5) {
+  if (!Array.isArray(list)) return [];
+  return list.slice(0, limit).map((item) => ({
+    name: item.name || item.label || "Outro",
+    value: item.count ?? item.value ?? 0,
+  }));
+}
+
+function Dashboard() {
+  const [stats, setStats] = useState(null);
+  const [status, setStatus] = useState("loading"); // loading | ok | error
+
+  useEffect(() => {
+    fetch(STATS_URL, { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("stats.json not found");
+        return res.json();
+      })
+      .then((data) => {
+        setStats(data);
+        setStatus("ok");
+      })
+      .catch(() => setStatus("error"));
+  }, []);
+
+  if (status === "loading") {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Arial, sans-serif", color: SLATE }}>
+        Carregando estatísticas...
+      </div>
+    );
+  }
+
+  if (status === "error" || !stats) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Arial, sans-serif", color: SLATE, textAlign: "center", padding: 20 }}>
+        Não consegui carregar o arquivo stats.json.<br />
+        Verifique se o GitHub Action já rodou pelo menos uma vez.
+      </div>
+    );
+  }
+
+  const totalVisitors = stats.total?.total ?? 0;
+  const pages = toNameValue(stats.hits?.hits, 1);
+  const referrers = toNameValue(stats.referrers?.stats, 5);
+  const browsers = toNameValue(stats.browsers?.stats, 4);
+  const systems = toNameValue(stats.systems?.stats, 4);
+
+  const topReferrer = referrers[0]?.name || "—";
+  const topSystem = systems[0]?.name || "—";
+  const dailyPulse = (stats.total?.daily || []).map((d) => d.count ?? 0);
+
+  const updated = stats.updatedAt
+    ? new Date(stats.updatedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "long" })
+    : "";
+
+  return (
+    <div style={{ minHeight: "100vh", background: "#F7F9FB", padding: 20, fontFamily: "Arial, sans-serif" }}>
+      <div style={{ maxWidth: 640, margin: "0 auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 18 }}>
+          <div>
+            <div style={{ fontSize: 11, color: PULSE, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>Painel do site</div>
+            <div style={{ fontSize: 22, fontWeight: 700, color: NAVY }}>@nutri.sergioporto</div>
+          </div>
+          <div style={{ fontSize: 12, color: SLATE }}>Atualizado em {updated}</div>
+        </div>
+
+        <div style={{ background: NAVY, borderRadius: 12, padding: "18px 20px", marginBottom: 16, color: "#fff" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <div style={{ fontSize: 12, opacity: 0.75, textTransform: "uppercase", letterSpacing: 0.5 }}>Acessos nos últimos 7 dias</div>
+              <div style={{ fontSize: 34, fontWeight: 700 }}>{totalVisitors}</div>
+            </div>
+            <div style={{ width: 140 }}>
+              <PulseLine data={dailyPulse} />
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: 12, marginBottom: 20, flexWrap: "wrap" }}>
+          <StatCard label="Página" value={pages[0]?.name || "—"} sub={pages[0] ? `${pages[0].value} acessos` : ""} />
+          <StatCard label="Origem principal" value={topReferrer} />
+          <StatCard label="Sistema principal" value={topSystem} />
+        </div>
+
+        <div style={{ background: "#fff", border: `1px solid ${NAVY_LIGHT}`, borderRadius: 10, padding: "16px 18px", marginBottom: 16 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
+            De onde vêm os acessos
+          </div>
+          <HBar data={referrers} />
+        </div>
+
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <div style={{ background: "#fff", border: `1px solid ${NAVY_LIGHT}`, borderRadius: 10, padding: "16px 18px", flex: 1, minWidth: 260 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 12 }}>Navegador</div>
+            <HBar data={browsers} unit=" acessos" />
+          </div>
+          <div style={{ background: "#fff", border: `1px solid ${NAVY_LIGHT}`, borderRadius: 10, padding: "16px 18px", flex: 1, minWidth: 260 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 12 }}>Sistema</div>
+            <HBar data={systems} unit=" acessos" />
+          </div>
+        </div>
+
+        <div style={{ marginTop: 18, fontSize: 11, color: SLATE, textAlign: "center" }}>
+          Dados automáticos • GoatCounter • atualizado 1x por dia
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Dashboard />);
+</script>
+</body>
+</html>
