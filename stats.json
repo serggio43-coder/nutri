@@ -1,50 +1,18 @@
 {
-  "updatedAt": "2026-07-25T14:50:28Z",
+  "updatedAt": "2026-07-26T14:53:44Z",
   "total": {
     "error": "not found"
   },
   "hits": {
     "hits": [
       {
-        "count": 24,
+        "count": 23,
         "path_id": 95209403,
         "path": "/",
         "event": false,
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 3,
         "stats": [
-          {
-            "day": "2026-07-18",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              1,
-              0,
-              0,
-              0
-            ],
-            "daily": 3,
-            "weekly": 24,
-            "monthly": 24
-          },
           {
             "day": "2026-07-19",
             "hourly": [
@@ -73,7 +41,9 @@
               0,
               0
             ],
-            "daily": 3
+            "daily": 3,
+            "weekly": 23,
+            "monthly": 23
           },
           {
             "day": "2026-07-20",
@@ -245,28 +215,18 @@
               0,
               0,
               0,
+              1,
               0,
               0,
               0,
               0,
               0,
-              0,
-              0
+              1
             ],
-            "daily": 0
-          }
-        ]
-      },
-      {
-        "count": 3,
-        "path_id": 95340677,
-        "path": "whatsapp-meio",
-        "event": true,
-        "title": "\n&gt;\n          <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"white\"><path d=\"M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2",
-        "max": 1,
-        "stats": [
+            "daily": 2
+          },
           {
-            "day": "2026-07-18",
+            "day": "2026-07-26",
             "hourly": [
               0,
               0,
@@ -287,16 +247,24 @@
               0,
               0,
               0,
-              1,
+              0,
               0,
               0,
               0,
               0
             ],
-            "daily": 1,
-            "weekly": 3,
-            "monthly": 3
-          },
+            "daily": 0
+          }
+        ]
+      },
+      {
+        "count": 2,
+        "path_id": 95340677,
+        "path": "whatsapp-meio",
+        "event": true,
+        "title": "\n&gt;\n          <svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"white\"><path d=\"M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2",
+        "max": 1,
+        "stats": [
           {
             "day": "2026-07-19",
             "hourly": [
@@ -325,7 +293,9 @@
               0,
               0
             ],
-            "daily": 1
+            "daily": 1,
+            "weekly": 2,
+            "monthly": 2
           },
           {
             "day": "2026-07-20",
@@ -506,29 +476,59 @@
               0
             ],
             "daily": 0
+          },
+          {
+            "day": "2026-07-26",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 0
           }
         ]
       }
     ],
-    "total": 27,
+    "total": 25,
     "more": false
   },
   "browsers": {
     "stats": [
       {
-        "id": "Chrome",
-        "name": "Chrome",
-        "count": 15
-      },
-      {
         "id": "Safari",
         "name": "Safari",
-        "count": 15
+        "count": 13
+      },
+      {
+        "id": "Chrome",
+        "name": "Chrome",
+        "count": 11
       },
       {
         "id": "Edge",
         "name": "Edge",
-        "count": 2
+        "count": 1
       }
     ],
     "more": false
@@ -538,17 +538,17 @@
       {
         "id": "iOS",
         "name": "iOS",
-        "count": 14
+        "count": 12
       },
       {
         "id": "Windows",
         "name": "Windows",
-        "count": 10
+        "count": 9
       },
       {
         "id": "Android",
         "name": "Android",
-        "count": 6
+        "count": 2
       },
       {
         "id": "Linux",
@@ -573,7 +573,7 @@
       {
         "id": "ig",
         "name": "ig",
-        "count": 12,
+        "count": 10,
         "ref_scheme": "c"
       }
     ],
