@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T12:09:42Z",
+  "updatedAt": "2026-08-03T13:45:03Z",
   "total": {
     "error": "not found"
   },
@@ -14,7 +14,7 @@
         "max": 3,
         "stats": [
           {
-            "day": "2026-07-26",
+            "day": "2026-07-27",
             "hourly": [
               0,
               0,
@@ -42,38 +42,8 @@
               0
             ],
             "daily": 0,
-            "weekly": 5,
-            "monthly": 5
-          },
-          {
-            "day": "2026-07-27",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "daily": 1
+            "weekly": 4,
+            "monthly": 4
           },
           {
             "day": "2026-07-28",
@@ -223,7 +193,8 @@
               0,
               0
             ],
-            "daily": 0
+            "daily": 0,
+            "monthly": 1
           },
           {
             "day": "2026-08-02",
@@ -254,6 +225,37 @@
               0
             ],
             "daily": 0
+          },
+          {
+            "day": "2026-08-03",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 1,
+            "weekly": 1
           }
         ]
       }
@@ -266,7 +268,11 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 5
+        "count": 4
+      },
+      {
+        "name": "",
+        "count": 1
       },
       {
         "id": "Safari",
@@ -286,12 +292,7 @@
       {
         "id": "iOS",
         "name": "iOS",
-        "count": 1
-      },
-      {
-        "id": "Windows",
-        "name": "Windows",
-        "count": 1
+        "count": 2
       }
     ],
     "more": false
@@ -300,7 +301,7 @@
     "stats": [
       {
         "name": "",
-        "count": 3,
+        "count": 4,
         "ref_scheme": "o"
       },
       {
@@ -308,12 +309,6 @@
         "name": "Google",
         "count": 1,
         "ref_scheme": "g"
-      },
-      {
-        "id": "ig",
-        "name": "ig",
-        "count": 1,
-        "ref_scheme": "c"
       }
     ],
     "more": false
