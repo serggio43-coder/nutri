@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T15:17:46Z",
+  "updatedAt": "2026-08-31T17:58:15Z",
   "total": {
     "error": "not found"
   },
@@ -13,38 +13,6 @@
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 1,
         "stats": [
-          {
-            "day": "2026-08-23",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "daily": 0,
-            "weekly": 5,
-            "monthly": 6
-          },
           {
             "day": "2026-08-24",
             "hourly": [
@@ -61,7 +29,7 @@
               0,
               0,
               0,
-              1,
+              0,
               0,
               0,
               0,
@@ -73,7 +41,9 @@
               1,
               0
             ],
-            "daily": 2
+            "daily": 1,
+            "weekly": 6,
+            "monthly": 6
           },
           {
             "day": "2026-08-25",
@@ -248,13 +218,42 @@
               0,
               0,
               0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "daily": 2
+          },
+          {
+            "day": "2026-08-31",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
               0,
               0,
               0,
               0
             ],
-            "daily": 1,
-            "weekly": 1
+            "daily": 0
           }
         ]
       }
@@ -267,12 +266,12 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 4
+        "count": 5
       },
       {
         "id": "Safari",
         "name": "Safari",
-        "count": 4
+        "count": 2
       }
     ],
     "more": false
@@ -280,19 +279,24 @@
   "systems": {
     "stats": [
       {
-        "id": "iOS",
-        "name": "iOS",
-        "count": 4
-      },
-      {
         "id": "Android",
         "name": "Android",
+        "count": 2
+      },
+      {
+        "id": "iOS",
+        "name": "iOS",
         "count": 2
       },
       {
         "id": "Windows",
         "name": "Windows",
         "count": 2
+      },
+      {
+        "id": "macOS",
+        "name": "macOS",
+        "count": 1
       }
     ],
     "more": false
@@ -300,22 +304,16 @@
   "referrers": {
     "stats": [
       {
+        "id": "Google",
+        "name": "Google",
+        "count": 3,
+        "ref_scheme": "g"
+      },
+      {
         "id": "www.facebook.com",
         "name": "www.facebook.com",
         "count": 3,
         "ref_scheme": "h"
-      },
-      {
-        "id": "Google",
-        "name": "Google",
-        "count": 2,
-        "ref_scheme": "g"
-      },
-      {
-        "id": "chatgpt.com",
-        "name": "chatgpt.com",
-        "count": 1,
-        "ref_scheme": "c"
       }
     ],
     "more": false
