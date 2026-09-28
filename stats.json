@@ -1,50 +1,18 @@
 {
-  "updatedAt": "2026-09-27T15:36:20Z",
+  "updatedAt": "2026-09-28T18:33:38Z",
   "total": {
     "error": "not found"
   },
   "hits": {
     "hits": [
       {
-        "count": 3,
+        "count": 2,
         "path_id": 95209403,
         "path": "/",
         "event": false,
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 1,
         "stats": [
-          {
-            "day": "2026-09-20",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ],
-            "daily": 1,
-            "weekly": 3,
-            "monthly": 3
-          },
           {
             "day": "2026-09-21",
             "hourly": [
@@ -73,7 +41,9 @@
               0,
               0
             ],
-            "daily": 0
+            "daily": 0,
+            "weekly": 2,
+            "monthly": 2
           },
           {
             "day": "2026-09-22",
@@ -227,6 +197,36 @@
           },
           {
             "day": "2026-09-27",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 0
+          },
+          {
+            "day": "2026-09-28",
             "hourly": [
               0,
               0,
@@ -266,7 +266,7 @@
         "max": 1,
         "stats": [
           {
-            "day": "2026-09-20",
+            "day": "2026-09-21",
             "hourly": [
               0,
               0,
@@ -296,36 +296,6 @@
             "daily": 0,
             "weekly": 1,
             "monthly": 1
-          },
-          {
-            "day": "2026-09-21",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "daily": 0
           },
           {
             "day": "2026-09-22",
@@ -506,11 +476,41 @@
               0
             ],
             "daily": 0
+          },
+          {
+            "day": "2026-09-28",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 0
           }
         ]
       }
     ],
-    "total": 4,
+    "total": 3,
     "more": false
   },
   "browsers": {
@@ -523,7 +523,7 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 2
+        "count": 1
       }
     ],
     "more": false
@@ -539,23 +539,12 @@
         "id": "Android",
         "name": "Android",
         "count": 1
-      },
-      {
-        "id": "Windows",
-        "name": "Windows",
-        "count": 1
       }
     ],
     "more": false
   },
   "referrers": {
     "stats": [
-      {
-        "id": "www.facebook.com",
-        "name": "www.facebook.com",
-        "count": 2,
-        "ref_scheme": "h"
-      },
       {
         "name": "",
         "count": 1,
@@ -566,6 +555,12 @@
         "name": "ig",
         "count": 1,
         "ref_scheme": "c"
+      },
+      {
+        "id": "www.facebook.com",
+        "name": "www.facebook.com",
+        "count": 1,
+        "ref_scheme": "h"
       }
     ],
     "more": false
