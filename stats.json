@@ -1,50 +1,18 @@
 {
-  "updatedAt": "2026-10-03T15:06:55Z",
+  "updatedAt": "2026-10-04T15:43:39Z",
   "total": {
     "error": "not found"
   },
   "hits": {
     "hits": [
       {
-        "count": 1,
+        "count": 2,
         "path_id": 95209403,
         "path": "/",
         "event": false,
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 1,
         "stats": [
-          {
-            "day": "2026-09-26",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "daily": 0,
-            "weekly": 1,
-            "monthly": 1
-          },
           {
             "day": "2026-09-27",
             "hourly": [
@@ -73,7 +41,9 @@
               0,
               0
             ],
-            "daily": 0
+            "daily": 0,
+            "weekly": 2,
+            "monthly": 1
           },
           {
             "day": "2026-09-28",
@@ -193,7 +163,8 @@
               0,
               0
             ],
-            "daily": 0
+            "daily": 0,
+            "monthly": 1
           },
           {
             "day": "2026-10-02",
@@ -240,6 +211,36 @@
               0,
               0,
               0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 1
+          },
+          {
+            "day": "2026-10-04",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
               0,
               0,
               0,
@@ -258,7 +259,7 @@
         ]
       }
     ],
-    "total": 1,
+    "total": 2,
     "more": false
   },
   "browsers": {
@@ -266,7 +267,7 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 1
+        "count": 2
       }
     ],
     "more": false
@@ -276,7 +277,7 @@
       {
         "id": "Android",
         "name": "Android",
-        "count": 1
+        "count": 2
       }
     ],
     "more": false
@@ -286,7 +287,7 @@
       {
         "id": "www.facebook.com",
         "name": "www.facebook.com",
-        "count": 1,
+        "count": 2,
         "ref_scheme": "h"
       }
     ],
