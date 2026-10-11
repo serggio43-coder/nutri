@@ -1,50 +1,18 @@
 {
-  "updatedAt": "2026-10-10T16:10:03Z",
+  "updatedAt": "2026-10-11T16:36:25Z",
   "total": {
     "error": "not found"
   },
   "hits": {
     "hits": [
       {
-        "count": 4,
+        "count": 5,
         "path_id": 95209403,
         "path": "/",
         "event": false,
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 1,
         "stats": [
-          {
-            "day": "2026-10-03",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "daily": 0,
-            "weekly": 3,
-            "monthly": 4
-          },
           {
             "day": "2026-10-04",
             "hourly": [
@@ -73,7 +41,9 @@
               0,
               0
             ],
-            "daily": 0
+            "daily": 0,
+            "weekly": 4,
+            "monthly": 5
           },
           {
             "day": "2026-10-05",
@@ -253,13 +223,43 @@
               0,
               0
             ],
+            "daily": 1
+          },
+          {
+            "day": "2026-10-11",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
             "daily": 1,
             "weekly": 1
           }
         ]
       }
     ],
-    "total": 4,
+    "total": 5,
     "more": false
   },
   "browsers": {
@@ -267,7 +267,12 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 5
+        "count": 4
+      },
+      {
+        "id": "Safari",
+        "name": "Safari",
+        "count": 1
       }
     ],
     "more": false
@@ -277,12 +282,17 @@
       {
         "id": "Android",
         "name": "Android",
-        "count": 3
+        "count": 2
       },
       {
         "id": "Windows",
         "name": "Windows",
         "count": 2
+      },
+      {
+        "id": "iOS",
+        "name": "iOS",
+        "count": 1
       }
     ],
     "more": false
@@ -299,6 +309,12 @@
         "name": "",
         "count": 1,
         "ref_scheme": "o"
+      },
+      {
+        "id": "l.instagram.com",
+        "name": "l.instagram.com",
+        "count": 1,
+        "ref_scheme": "h"
       }
     ],
     "more": false
