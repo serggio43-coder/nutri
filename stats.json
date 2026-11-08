@@ -1,50 +1,18 @@
 {
-  "updatedAt": "2026-11-07T16:47:34Z",
+  "updatedAt": "2026-11-08T16:58:43Z",
   "total": {
     "error": "not found"
   },
   "hits": {
     "hits": [
       {
-        "count": 9,
+        "count": 8,
         "path_id": 95209403,
         "path": "/",
         "event": false,
         "title": "Sérgio Porto — Nutrição Esportiva",
         "max": 3,
         "stats": [
-          {
-            "day": "2026-10-31",
-            "hourly": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "daily": 1,
-            "weekly": 8,
-            "monthly": 1
-          },
           {
             "day": "2026-11-01",
             "hourly": [
@@ -74,6 +42,7 @@
               0
             ],
             "daily": 0,
+            "weekly": 8,
             "monthly": 8
           },
           {
@@ -254,13 +223,42 @@
               0,
               0
             ],
-            "daily": 1,
-            "weekly": 1
+            "daily": 1
+          },
+          {
+            "day": "2026-11-08",
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "daily": 0
           }
         ]
       }
     ],
-    "total": 9,
+    "total": 8,
     "more": false
   },
   "browsers": {
@@ -273,7 +271,7 @@
       {
         "id": "Chrome",
         "name": "Chrome",
-        "count": 5
+        "count": 3
       }
     ],
     "more": false
@@ -281,14 +279,14 @@
   "systems": {
     "stats": [
       {
-        "id": "Windows",
-        "name": "Windows",
-        "count": 5
-      },
-      {
         "id": "iOS",
         "name": "iOS",
         "count": 4
+      },
+      {
+        "id": "Windows",
+        "name": "Windows",
+        "count": 3
       },
       {
         "id": "macOS",
@@ -302,7 +300,7 @@
     "stats": [
       {
         "name": "",
-        "count": 7,
+        "count": 6,
         "ref_scheme": "o"
       },
       {
